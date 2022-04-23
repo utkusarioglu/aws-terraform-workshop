@@ -18,3 +18,7 @@ jobs:
           aws-region: eu-central-1
       - name: sts
         run: aws sts get-caller-identity
+      - name: terraform
+        run: |
+          terraform init
+          terraform apply --auto-approve
