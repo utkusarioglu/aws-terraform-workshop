@@ -4,5 +4,5 @@ resource "aws_vpc" "test_vpc" {
 }
 
 output "aws_vpc_id" {
-  value = aws_vpc.test_vpc.id
+  value = try(aws_vpc.test_vpc.id, "unavailable")
 }
