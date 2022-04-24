@@ -1,11 +1,11 @@
-name: Aws things
+name: AWS Workflows
 
 on: 
   workflow_dispatch:
 
 jobs:
-  aws-things:
-    name: do some aws things
+  apply-aws-changes:
+    name: Apply AWS Changes
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -18,9 +18,9 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: eu-central-1
-      - name: sts
+      - name: STS
         run: aws sts get-caller-identity
-      - name: terraform
+      - name: Terraform
         run: |
           terraform init
           terraform apply --auto-approve
