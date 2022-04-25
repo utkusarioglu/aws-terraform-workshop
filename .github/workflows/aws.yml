@@ -20,6 +20,8 @@ jobs:
           aws-region: eu-central-1
       - name: STS
         run: aws sts get-caller-identity
+      - name: List Buckets
+        run: aws s3api list-buckets
       - name: Terraform
         run: |
           terraform init
