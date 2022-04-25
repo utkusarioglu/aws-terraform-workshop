@@ -16,7 +16,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          role-to-assume: arn:aws:iam::731522355899:role/workshop-aws-terraform-gh-actions
           aws-region: eu-central-1
       - name: STS
         run: aws sts get-caller-identity
