@@ -1,5 +1,5 @@
 module "basic" {
-  enabled = true
+  enabled = false
   source = "./src/basic"
 }
 
