@@ -1,0 +1,9 @@
+{
+  "runOnSave.commands": [
+    {
+      "match": "\\.tf$",
+      "async": true,
+      "command": "scripts/terraform-fmt.sh",
+    },
+  ],
+}
