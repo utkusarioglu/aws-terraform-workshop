@@ -1,0 +1,28 @@
+name: AWS Workflows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apply-aws-changes:
+    name: Apply AWS Changes
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::731522355899:role/workshop-aws-terraform-gh-actions
+          aws-region: eu-central-1
+      - name: STS
+        run: aws sts get-caller-identity
+      # - name: List Buckets
+      #   run: aws s3api list-buckets
+      - name: Terraform
+        run: |
+          terraform init
+          terraform destroy --auto-approve
