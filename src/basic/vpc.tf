@@ -1,6 +1,7 @@
 
 
 module "vpc" {
+  create_vpc = false
   source = "terraform-aws-modules/vpc/aws"
 
   name = "aws-terraform-workshop"
