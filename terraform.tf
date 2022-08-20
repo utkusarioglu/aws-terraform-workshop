@@ -1,7 +1,7 @@
 module "basic" {
   enabled = false
-  source = "./src/basic"
-  
+  source  = "./src/basic"
+
   providers = {
     aws.eu_central_1 = aws.eu_central_1
   }
