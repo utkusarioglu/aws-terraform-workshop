@@ -1,6 +1,7 @@
 
 
 module "vpc" {
+  provider = aws.eu_central_1
   create_vpc = false
   source = "terraform-aws-modules/vpc/aws"
 
